@@ -1,0 +1,19 @@
+<div>
+	<p>Welcome <span> <%= current_user.email%></span>!!!</p>
+	<%= link_to "Login", new_user_session_path %>
+	<%= link_to "Go out", destroy_user_session_path %>
+	<%= link_to "Register new", new_user_registration_path %>
+	<%= link_to "Home", root_path %>
+  <%= link_to "Account", user_path(current_user) %>
+	<a href="/a">Rake Routes</a>
+</div>
+
+<div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>
