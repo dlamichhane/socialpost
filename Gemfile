@@ -36,15 +36,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development do
+group :test, :development do
   gem 'sqlite3'
+  gem "rspec-rails", "~> 2.13.2"
 end
-
 
 group :production do
   gem 'pg', '0.15.1'
 end
 
+group :test do
+	gem 'selenium-webdriver', '2.0.0'
+	gem 'capybara', '2.1.0'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
