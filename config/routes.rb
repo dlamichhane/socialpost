@@ -1,7 +1,8 @@
 Socialpost::Application.routes.draw do
 
-  get "static_pages/home"
-  get "static_pages/about_us"
+  # get "static_pages/about_us"
+  match '/about_us', to: 'static_pages#about_us', via: 'get'
+
   resources :users
   
   devise_for :users do 
@@ -14,7 +15,7 @@ Socialpost::Application.routes.draw do
   #   get  'logoutx'  => 'devise/sessions#destroy', :as => :destroy_user_session
   # end
   
-  root 'social_person#index'
+  root 'static_pages#home'
   
   #get "social_person/index"
   #get "social_person/new"
