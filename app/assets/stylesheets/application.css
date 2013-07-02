@@ -12,22 +12,3 @@
  *= require_tree .
  */
 
-.top-bar {
-	
-	.left-header {
-		width: 200px;
-	}
-
-	.right-header {
-		width: 600px;
-	
-		.nav-bar {
-			list-style: none;
-
-			li {
-				display: inline;
-			}
-		}
-	}
-}
-

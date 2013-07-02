@@ -1,0 +1,14 @@
+
+<footer class="footer">
+	<small>
+		<%= content_tag(:p, '&copy; SocialPost 2013'.html_safe) %>
+	</small>
+	<nav>
+		<ul>
+			<li><%= link_to "Home", root_path %></li>
+			<li><%= link_to "About us", user_path(current_user) %></li>
+			<li><%= link_to "Terms of Service", '#' %></li>
+			<li><%= link_to "Privacy policy", '#' %></li>
+		</ul>
+	</nav>
+</footer>

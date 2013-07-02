@@ -1,33 +1,19 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Socialpost - <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>Socialpost - <%= yield(:title) %></title>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+	<%= render 'layouts/shim' %>
 </head>
 <body>
-	<div class="content-wrapper">
-		<div class="top-bar">
-			<div class="left-header">
-				<%= link_to "SocialPost", '#', id: "logo" %>
-			</div>
-			<div class="right-header" >
-				<ul class="nav-bar">
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Profile", user_path(current_user) %></li>
-					<li><%= link_to "Sign in", new_user_session_path %></li>
-				</ul>
-			</div>
-		</div>
-		<div class="content">
-			<%= yield %>
-		</div>
-		<div class="footer">
-			<%= content_tag(:p, '&copy; SocialPost 2013'.html_safe) %>
-		</div>
-		<%= debug(params) if Rails.env.development? %>
+	<%= render 'layouts/header' %>
+	<div class="container">
+		<%= yield %>
+		<%= render 'layouts/footer' %>
 	</div>
-
+	<%= debug(params) if Rails.env.development? %>
 </body>
 </html>
