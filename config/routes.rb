@@ -3,22 +3,15 @@ Socialpost::Application.routes.draw do
   # get "static_pages/about_us"
   match '/about_us', to: 'static_pages#about_us', via: 'get'
 
-  resources :users
   
-  devise_for :users do 
+  devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy' 
   end
-  
-  # devise_scope :users do
-  #   get  'loginx'   => 'devise/sessions#new',     :as => :new_user_session
-  #   post 'loginx'   => 'devise/sessions#create',  :as => :user_session
-  #   get  'logoutx'  => 'devise/sessions#destroy', :as => :destroy_user_session
-  # end
-  
+
+  resources :users
+
   root 'static_pages#home'
   
-  #get "social_person/index"
-  #get "social_person/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
