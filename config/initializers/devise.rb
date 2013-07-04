@@ -222,7 +222,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, '520723538008159', '3d804c6ee4f0837227d17ce6606a1679', :scope => 'user,public_repo'
   config.omniauth :facebook, '520723538008159', '3d804c6ee4f0837227d17ce6606a1679',
-      # {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}, 
+      {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}, 
       :strategy_class => OmniAuth::Strategies::Facebook
 
   # ==> Warden configuration

@@ -3,10 +3,10 @@ Socialpost::Application.routes.draw do
   # get "static_pages/about_us"
   match '/about_us', to: 'static_pages#about_us', via: 'get'
 
-  
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
-    get '/users/sign_out' => 'devise/sessions#destroy' 
-  end
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  # devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+  #   get '/users/sign_out' => 'devise/sessions#destroy' 
+  # end
 
   resources :users
 
