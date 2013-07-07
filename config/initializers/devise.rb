@@ -229,7 +229,12 @@ Devise.setup do |config|
     config.omniauth :facebook, '514483658605294', '9e52a689ed70ac5701f86bad1dc64109',
       {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   end
-      
+     
+  if Rails.env.development?
+    config.omniauth :twitter, 'nksp538cRDJlACYeIjFOgA', '7A92S6gPRzkxGSvfVtWkP5oKOaKnNgZlTLa4euTpQE'
+  else
+    config.omniauth :twitter, 'SQzTi4sziI80aiigC0pnw', '2Twdsnu3qD7P7KWlUhp4muB2ndkoHj34kYyeewQdIA'
+  end 
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

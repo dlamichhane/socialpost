@@ -1,3 +1,3 @@
 
-<%= content_tag(:div, content_tag(:p, 'Welcome, ' + @user.email), class: "user_profile")  %>
-<%= gravatar_for @user %>
+<%= content_tag(:div, content_tag(:p, 'Welcome, ' + current_user.email), class: "user_profile")  %>
+<%= gravatar_for current_user %>

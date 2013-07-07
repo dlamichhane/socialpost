@@ -31,6 +31,11 @@ gem "devise", "~> 3.0.0.rc"
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem "omniauth-twitter", "~> 1.0.0"
+
+# Use activerecord-session_store for using ActiveRecord store for session 
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+gem 'pry', :group => :development
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -40,6 +45,7 @@ end
 group :test, :development do
   gem 'sqlite3'
   gem "rspec-rails", "~> 2.13.2"
+  gem "debugger", "~> 1.6.0"
 end
 
 group :production do
